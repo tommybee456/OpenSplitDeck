@@ -2,55 +2,29 @@
 A steam deck-like controller made from off the shelf parts and custom hardware and firmware
 
 
-ZIF connector pinouts:
+## ZIF connector pinouts:
 
-OLED
+### OLED
 Pins Left to right:
-1. ?
-2. GND
-3.?
-4. GND
-5. Key
-6. X
-7. 3.3V
-8. Shoulder
-9. Y
-10. 3.3V
+
+|1.|2.|3.|4.|5.|6.|7.|8.|9.|
+|-|-|-|-|-|-|-|-|-|
+|?|GND|GND|Key|X|3.3V|Shoulder|Y|3.3V|
 
 
-LCD
+### LCD
 Pins Left to right:
-1. ?
-2. GND
-3. ?
-4. GND
-5. Key
-6. X
-7. 3.3V
-8. GND
-9. Y
-10. 3.3V
+|1.|2.|3.|4.|5.|6.|7.|8.|9.|10|
+|-|-|-|-|-|-|-|-|-|-|
+|?|GND|?|GND|Key|X|3.3V|GND|Y|3.3V|
 
-Buttons Pinout: (gotta redo this one)
-1. GND
-2. Start
-3. GND
-4. 
-5. GND
-6. 
-7. GND
-8. 
-9. GND
-10.
+## Buttons Pinout: (gotta redo this one)
+|1.|2.|3.|4.|5.|6.|7.|8.|9.|10|
+|-|-|-|-|-|-|-|-|-|-|
+|GND|Start|GND|-|GND|-|GND|-|GND|-|
 
-Dpad Pinout:
-1. GND
-2. Select
-3. GND
-4. Down
-5. GND
-6. Left
-7. GND
-8. Right
-9. GND
-10. Up
+## Dpad Pinout:
+
+|1.|2.|3.|4.|5.|6.|7.|8.|9.|10|
+|-|-|-|-|-|-|-|-|-|-|
+|GND|Select|GND|Down|GND|Left|GND|Right|GND|Up|
