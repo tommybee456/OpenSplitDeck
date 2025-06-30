@@ -1,18 +1,21 @@
 ## ZIF connector pinouts:
 
-### OLED
+> **Note**  
+> Please, please, please, double check this with a multimeter before providing power. They should be correct but I dont want you to fry anything.
+
+### OLED Joysitck
 Pins Left to right:
 
-|1.|2.|3.|4.|5.|6.|7.|8.|9.|
-|-|-|-|-|-|-|-|-|-|
-|?|GND|GND|Key|X|3.3V|Shoulder|Y|3.3V|
+|1.|2.|3.|4.|5.|6.|7.|8.|9.|10.|
+|-|-|-|-|-|-|-|-|-|-|
+|?|GND|?|GND|Key|X|3.3V|Shoulder|Y|3.3V|
 
 
-### LCD
+### LCD Joystick
 Pins Left to right:
 |1.|2.|3.|4.|5.|6.|7.|8.|9.|10|
 |-|-|-|-|-|-|-|-|-|-|
-|?|GND|?|GND|Key|X|3.3V|GND|Y|3.3V|
+|?|GND|?|GND|Key|X|3.3V|Shoulder|Y|3.3V|
 
 ## Buttons Pinout: (gotta redo this one)
 |1.|2.|3.|4.|5.|6.|7.|8.|9.|10|
