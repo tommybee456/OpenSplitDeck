@@ -1,6 +1,6 @@
 # OpenSteamDeckController (v0.1)
 
-A custom modular wireless controller inspired by the Steam Deck and Steam Controller. Features trackpads, detachable halves, and full HID support. Built from scratch using nRF52840 microcontrollers and the Enhanced ShockBurst protocol.
+A custom modular wireless controller inspired by the Steam Deck and Steam Controller. Features trackpads, detachable halves, and full HID support. Built from scratch using nRF52840 microcontrollers and the Enhanced ShockBurst protocol. [Video](https://youtu.be/ycMgIToLav8?si=cVztny4IiIS_V4oI)
 
 > **Note**  
 > This project is in an early development stage — v0.1. Expect breaking changes, bugs, and frequent updates.
@@ -80,4 +80,4 @@ MIT License — see `LICENSE` file for details.
 
 ## 💬 Contact
 
-For questions or suggestions, reach out via GitHub Issues or [YouTube](https://www.youtube.com/@TommyB).
+For questions or suggestions, reach out via GitHub Issues or [YouTube](https://www.youtube.com/@TommyBee456).
