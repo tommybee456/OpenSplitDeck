@@ -1,3 +1,34 @@
+
+<div align="right">
+  <details>
+    <summary >🌐 Language</summary>
+    <div>
+      <div align="center">
+        <a href="https://openaitx.github.io/view.html?user=tommybee456&project=OpenSteamDeckController&lang=en">English</a>
+        | <a href="https://openaitx.github.io/view.html?user=tommybee456&project=OpenSteamDeckController&lang=zh-CN">简体中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=tommybee456&project=OpenSteamDeckController&lang=zh-TW">繁體中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=tommybee456&project=OpenSteamDeckController&lang=ja">日本語</a>
+        | <a href="https://openaitx.github.io/view.html?user=tommybee456&project=OpenSteamDeckController&lang=ko">한국어</a>
+        | <a href="https://openaitx.github.io/view.html?user=tommybee456&project=OpenSteamDeckController&lang=hi">हिन्दी</a>
+        | <a href="https://openaitx.github.io/view.html?user=tommybee456&project=OpenSteamDeckController&lang=th">ไทย</a>
+        | <a href="https://openaitx.github.io/view.html?user=tommybee456&project=OpenSteamDeckController&lang=fr">Français</a>
+        | <a href="https://openaitx.github.io/view.html?user=tommybee456&project=OpenSteamDeckController&lang=de">Deutsch</a>
+        | <a href="https://openaitx.github.io/view.html?user=tommybee456&project=OpenSteamDeckController&lang=es">Español</a>
+        | <a href="https://openaitx.github.io/view.html?user=tommybee456&project=OpenSteamDeckController&lang=it">Italiano</a>
+        | <a href="https://openaitx.github.io/view.html?user=tommybee456&project=OpenSteamDeckController&lang=ru">Русский</a>
+        | <a href="https://openaitx.github.io/view.html?user=tommybee456&project=OpenSteamDeckController&lang=pt">Português</a>
+        | <a href="https://openaitx.github.io/view.html?user=tommybee456&project=OpenSteamDeckController&lang=nl">Nederlands</a>
+        | <a href="https://openaitx.github.io/view.html?user=tommybee456&project=OpenSteamDeckController&lang=pl">Polski</a>
+        | <a href="https://openaitx.github.io/view.html?user=tommybee456&project=OpenSteamDeckController&lang=ar">العربية</a>
+        | <a href="https://openaitx.github.io/view.html?user=tommybee456&project=OpenSteamDeckController&lang=fa">فارسی</a>
+        | <a href="https://openaitx.github.io/view.html?user=tommybee456&project=OpenSteamDeckController&lang=tr">Türkçe</a>
+        | <a href="https://openaitx.github.io/view.html?user=tommybee456&project=OpenSteamDeckController&lang=vi">Tiếng Việt</a>
+        | <a href="https://openaitx.github.io/view.html?user=tommybee456&project=OpenSteamDeckController&lang=id">Bahasa Indonesia</a>
+      </div>
+    </div>
+  </details>
+</div>
+
 # OpenSteamDeckController (v0.1)
 
 A custom modular wireless controller inspired by the Steam Deck and Steam Controller. Features trackpads, detachable halves, and full HID support. Built from scratch using nRF52840 microcontrollers and the Enhanced ShockBurst protocol. [Video](https://youtu.be/ycMgIToLav8?si=cVztny4IiIS_V4oI) 
