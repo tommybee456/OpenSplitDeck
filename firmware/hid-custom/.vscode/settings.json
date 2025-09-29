@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "usbd_hid.h": "c",
+        "log.h": "c",
+        "compare": "c"
+    }
+}

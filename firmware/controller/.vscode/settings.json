@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "iqs7211e.h": "c",
+        "iqs7211e_init.h": "c",
+        "i2c.h": "c"
+    }
+}

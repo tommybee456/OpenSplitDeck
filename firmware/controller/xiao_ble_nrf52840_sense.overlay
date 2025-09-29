@@ -1,0 +1,109 @@
+/*
+ * Device tree overlay for Seeed Xiao BLE nRF52840 Sense
+ * I2C0 and built-in LSM6DS3 IMU are already configured in base DTS
+ * I2C1 reserved for external trackpad when connected
+ */
+
+/ {
+    chosen {
+        zephyr,display = &ssd1306;
+    };
+
+    /* Configure NFC pins as GPIOs for DRV2605 haptic control */
+    nfct-pins-as-gpios;
+};
+&uart0 {
+    status = "disabled";
+};
+
+/* Enable ADC for analog inputs */
+&adc {
+    status = "okay";
+    #address-cells = <1>;
+    #size-cells = <0>;
+
+    channel@0 {
+        reg = <0>;
+        zephyr,gain = "ADC_GAIN_1_6";
+        zephyr,reference = "ADC_REF_INTERNAL";
+        zephyr,acquisition-time = <ADC_ACQ_TIME(ADC_ACQ_TIME_MICROSECONDS, 10)>;
+        zephyr,input-positive = <NRF_SAADC_AIN0>; /* P0.02/StickX */
+    };
+
+    channel@1 {
+        reg = <1>;
+        zephyr,gain = "ADC_GAIN_1_6";
+        zephyr,reference = "ADC_REF_INTERNAL";
+        zephyr,acquisition-time = <ADC_ACQ_TIME(ADC_ACQ_TIME_MICROSECONDS, 10)>;
+        zephyr,input-positive = <NRF_SAADC_AIN1>; /* P0.03/StickY */
+    };
+
+    channel@2 {
+        reg = <2>;
+        zephyr,gain = "ADC_GAIN_1_6";
+        zephyr,reference = "ADC_REF_INTERNAL";
+        zephyr,acquisition-time = <ADC_ACQ_TIME(ADC_ACQ_TIME_MICROSECONDS, 10)>;
+        zephyr,input-positive = <NRF_SAADC_AIN4>; /* P0.28/Trigger */
+    };
+
+    channel@3 {
+        reg = <3>;
+        zephyr,gain = "ADC_GAIN_1_6";
+        zephyr,reference = "ADC_REF_INTERNAL";
+        zephyr,acquisition-time = <ADC_ACQ_TIME(ADC_ACQ_TIME_MICROSECONDS, 10)>;
+        zephyr,input-positive = <NRF_SAADC_AIN7>; /* P0.31/Battery */
+    };
+};
+
+&i2c1 {
+    compatible = "nordic,nrf-twim";
+    status = "okay";
+    clock-frequency = <I2C_BITRATE_FAST>; // 400kHz
+
+    pinctrl-0 = <&i2c1_default>;
+    pinctrl-1 = <&i2c1_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    /* --- TWIM internal buffer tuning --- */
+    /* Max size of a single “flash-like” chunk the driver will send */
+    zephyr,flash-buf-max-size = <255>;     /* or <255>; both are fine */
+
+    /* Size of the internal concat buffer (must be >= addr/control bytes + chunk) */
+    zephyr,concat-buf-size = <514>;        /* safe for 1 + 128; use <258> if you set 255 above */
+
+    /* SSD1306 128x32 OLED display */
+    ssd1306: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        segment-remap;
+        com-invdir;
+        com-sequential;
+        prechargep = <0x22>;
+    };
+
+    // Reserved for external trackpad when connected
+};
+
+&pinctrl {
+
+    i2c1_default: i2c1_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 4)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 5)>;
+        };
+    };
+
+    i2c1_sleep: i2c1_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 4)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 5)>;
+            low-power-enable;
+        };
+    };
+};
