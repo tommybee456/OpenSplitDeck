@@ -1,11 +1,11 @@
-# OpenSteamDeckController (v0.1)
+# OpenSteamDeckController (v0.2)
 
 A custom modular wireless controller inspired by the Steam Deck and Steam Controller. Features trackpads, detachable halves, and full HID support. Built from scratch using nRF52840 microcontrollers and the Enhanced ShockBurst protocol. [Video](https://youtu.be/ycMgIToLav8?si=cVztny4IiIS_V4oI) 
 
 Join the [Discord!](https://discord.gg/ZtV34Hwx7y)
 
 > **Note**  
-> This project is in an early development stage — v0.1. Expect breaking changes, bugs, and frequent updates.
+> This project is in an early development stage — v0.2. Expect breaking changes, bugs, and frequent updates.
 
 ---
 
@@ -19,14 +19,27 @@ Join the [Discord!](https://discord.gg/ZtV34Hwx7y)
 
 ---
 
-## ✅ v0.1 Development Checklist
+## 😎 Current Status
+
+- 🎮 Emulates a DS4 Controller - This lets us use steam input for the trackpads. Ideally I want it to show up as a steamdeck controller but that is seeming like a much harder task than I thought.
+- 🖱️ Support mouse, keyboard, and gamepad HID modes. - Kinda. Mouse and keyboard are properly setup in the HID desccriptors, I just have not implpemented them yet.
+- 🧲 Custom-built trackpads using the Azoteq IQS7211E sensor - Yes.
+- 🔋 Magnetic pogo-pin charging and attachment system. - Yes but they only support charging. I would like to find a way to make the 2 halves of the controller communicate with each other.
+- 🛠️ Fully open-source hardware and firmware - 😎
+
+
+Controller is still definetly in the early phases. However it does function and work as expected. There is still a lot to improve, optimize and other features to add. Stay tuned for the progression of this project and feel free to build one yourself! Let me know if my instructions are bad.
+
+---
+
+## ✅ v0.2 Development Checklist
 
 ### Hardware
 - [x] Left and right controller halves (nRF52840)
 - [x] USB dongle (nRF52840)
 - [x] Custom trackpad PCBs (IQS7211E)
 - [ ] 3D printable version of the Shell
-- [ ] Controller PCBs(left + right)
+- [x] Controller PCBs(left + right)
 - [ ] Joystick PCBs(to drive down cost)
 - [ ] gp2040ce + nrf dongle
 
@@ -34,15 +47,17 @@ Join the [Discord!](https://discord.gg/ZtV34Hwx7y)
 - [x] ESB-based wireless communication
 - [x] Mouse + Gamepad + Keyboard HID reports
 - [x] Input parsing for trackpads and buttons
-- [ ] Haptics / rumble support
-- [ ] Gyro Support
+- [x] Haptics
+- [ ] rumble support
+- [x] Gyro Support
 - [ ] Calibration routines + save to internal memory
 - [ ] Configurable modes (gesture/tap/mouse/gamepad)
-- [ ] Steam Input compatibility or XInput compatibility
+- [x] Steam Input compatibility or XInput compatibility(This is now done through DS4)
 - [ ] Capacitive Joystick
 
 ### Other
 - [ ] Improve documentation and diagrams
+- [x] Add Screens
 - [ ] Design a UI or config utility(either software or adding screens)
 - [ ] Firmware migration to Zephyr (optional future)
 - [ ] Optimize latency and packet loss handling
@@ -57,12 +72,27 @@ Coming soon — demo images, build progress, and gameplay tests.
 ---
 
 ## 🛠️ Build Instructions
+- Schematic and board files:
 
-_(Coming soon)_
+  [LeftPCB](https://oshwlab.com/fbrains69/opensteamdeck-buttonpcb)
 
-- Schematic and board files (.zip or link)
+  [RightPCB](https://oshwlab.com/fbrains69/opensteamdeck-rightpcb)
+
+  [Trackpad](https://oshwlab.com/fbrains69/steamdeck-controller-trackpad-v1-2)
+
 - Firmware flashing instructions
-- Dependency list and setup
+
+  _(Coming soon)_
+  
+- BOM and Tools
+
+  _(Coming soon)
+
+- Build Guide
+
+  _(Coming soon)__
+
+  
 
 ---
 
