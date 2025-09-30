@@ -53,7 +53,9 @@ typedef struct
 
 // Function declarations
 int controller_esb_init(void);
-simple_controller_state_t *controller_esb_get_state(void);
+simple_controller_state_t *controller_esb_get_state(void);  // Legacy function - returns right controller
+simple_controller_state_t *controller_esb_get_left_state(void);   // Get left controller state
+simple_controller_state_t *controller_esb_get_right_state(void);  // Get right controller state
 bool controller_esb_has_new_data(void);
 
 #endif // CONTROLLER_ESB_H

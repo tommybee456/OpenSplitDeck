@@ -8,7 +8,10 @@ LOG_MODULE_REGISTER(controller_esb, LOG_LEVEL_INF);
 
 // ESB data structures
 static struct esb_payload rx_payload;
-static simple_controller_state_t controller_state = {0};
+
+// SEPARATE CONTROLLER STATES - prevents data corruption between controllers
+static simple_controller_state_t left_controller_state = {0};   // Index 1 (flags & 0x80 = true)
+static simple_controller_state_t right_controller_state = {0};  // Index 0 (flags & 0x80 = false)
 
 // LED for debug feedback
 static const struct gpio_dt_spec led0 = GPIO_DT_SPEC_GET(DT_ALIAS(led0), gpios);
@@ -71,22 +74,25 @@ static void simple_esb_event_handler(struct esb_evt const *event)
                 last_packet_time = current_time;
                 last_any_rx_time = current_time;
 
-                // Store the controller data
-                controller_state.flags = data->flags;
-                controller_state.trigger = data->trigger;
-                controller_state.stickX = data->stickX;
-                controller_state.stickY = data->stickY;
-                controller_state.padX = data->padX;
-                controller_state.padY = data->padY;
-                controller_state.buttons = data->buttons;
-                controller_state.accelX = data->accelX;
-                controller_state.accelY = data->accelY;
-                controller_state.accelZ = data->accelZ;
-                controller_state.gyroX = data->gyroX;
-                controller_state.gyroY = data->gyroY;
-                controller_state.gyroZ = data->gyroZ;
-                controller_state.data_received = true;
-                controller_state.last_ping_time = current_time;
+                // IMMEDIATE CONTROLLER ROUTING - store data in correct controller array immediately
+                // This prevents data corruption when both controllers transmit rapidly
+                simple_controller_state_t *target_controller = is_left ? &left_controller_state : &right_controller_state;
+                
+                target_controller->flags = data->flags;
+                target_controller->trigger = data->trigger;
+                target_controller->stickX = data->stickX;
+                target_controller->stickY = data->stickY;
+                target_controller->padX = data->padX;
+                target_controller->padY = data->padY;
+                target_controller->buttons = data->buttons;
+                target_controller->accelX = data->accelX;
+                target_controller->accelY = data->accelY;
+                target_controller->accelZ = data->accelZ;
+                target_controller->gyroX = data->gyroX;
+                target_controller->gyroY = data->gyroY;
+                target_controller->gyroZ = data->gyroZ;
+                target_controller->data_received = true;
+                target_controller->last_ping_time = current_time;
 
                 // Track severe delays that indicate controller-side issues
                 if (time_diff > 50) {
@@ -356,16 +362,32 @@ int controller_esb_init(void)
 }
 
 // Get current controller state
+// Legacy function - returns right controller for backward compatibility
 simple_controller_state_t *controller_esb_get_state(void)
 {
-    return &controller_state;
+    return &right_controller_state;
 }
 
-// Check if we have new data
+// Get left controller state
+simple_controller_state_t *controller_esb_get_left_state(void)
+{
+    return &left_controller_state;
+}
+
+// Get right controller state
+simple_controller_state_t *controller_esb_get_right_state(void)
+{
+    return &right_controller_state;
+}
+
+// Check if we have new data from either controller
 bool controller_esb_has_new_data(void)
 {
-    // Consider data "new" if we received it within the last 100ms
+    // Consider data "new" if we received it within the last 100ms from either controller
     uint32_t now = k_uptime_get_32();
-    return controller_state.data_received &&
-           (now - controller_state.last_ping_time) < 100;
+    bool left_has_data = left_controller_state.data_received &&
+                        (now - left_controller_state.last_ping_time) < 100;
+    bool right_has_data = right_controller_state.data_received &&
+                         (now - right_controller_state.last_ping_time) < 100;
+    return left_has_data || right_has_data;
 }
