@@ -1,4 +1,4 @@
-# OpenSteamDeckController (v0.2)
+# OpenSplitDeck (v0.2)
 
 A custom modular wireless controller inspired by the Steam Deck and Steam Controller. Features trackpads, detachable halves, and full HID support. Built from scratch using nRF52840 microcontrollers and the Enhanced ShockBurst protocol. [Video](https://youtu.be/ycMgIToLav8?si=cVztny4IiIS_V4oI) 
 
