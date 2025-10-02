@@ -48,19 +48,25 @@ Controller is still definetly in the early phases. However it does function and 
 - [x] Mouse + Gamepad + Keyboard HID reports
 - [x] Input parsing for trackpads and buttons
 - [x] Haptics
-- [ ] rumble support
+- [ ] Rumble support
 - [x] Gyro Support
 - [ ] Calibration routines + save to internal memory
 - [ ] Configurable modes (gesture/tap/mouse/gamepad)
 - [x] Steam Input compatibility or XInput compatibility(This is now done through DS4)
 - [ ] Capacitive Joystick
 
+### 3d Modeling
+- [ ] 3d Printable Case(Started, its in the STEP file)
+- [ ] 3d Printable Shoulder Button Structure(Experimental Version in STEP file)
+- [ ] 3d Printable Trigger Insert
+- [ ] Trigger Locks
+
 ### Other
 - [ ] Improve documentation and diagrams
 - [x] Add Screens
 - [ ] Design a UI or config utility(either software or adding screens)
-- [ ] Firmware migration to Zephyr (optional future)
-- [ ] Optimize latency and packet loss handling
+- [X] Firmware migration to Zephyr
+- [X] Optimize latency and packet loss handling (could still be better)
 - [ ] Reduces costs
 
 ---
