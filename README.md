@@ -86,7 +86,7 @@ Coming soon — demo images, build progress, and gameplay tests.
   
 - BOM and Tools
 
-  _(Coming soon)
+  [Living Sheet (Im Trying to find the best way to source everything still)](https://docs.google.com/spreadsheets/d/1LNsZTH84R0wy0S3vBu-m3nQxl8zSZT1IippI82DKSO4/edit?usp=sharing)
 
 - Build Guide
 
