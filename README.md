@@ -1,11 +1,11 @@
-# OpenSplitDeck (v0.2)
+# OpenSplitDeck (v0.3)
 
 A custom modular wireless controller inspired by the Steam Deck and Steam Controller. Features trackpads, detachable halves, and full HID support. Built from scratch using nRF52840 microcontrollers and the Enhanced ShockBurst protocol. [Video](https://youtu.be/ycMgIToLav8?si=cVztny4IiIS_V4oI) 
 
 Join the [Discord!](https://discord.gg/ZtV34Hwx7y)
 
 > **Note**  
-> This project is in an early development stage — v0.2. Expect breaking changes, bugs, and frequent updates.
+> This project is in an early development stage — v0.3. Expect breaking changes, bugs, and frequent updates.
 
 ---
 
@@ -32,7 +32,7 @@ Controller is still definetly in the early phases. However it does function and 
 
 ---
 
-## ✅ v0.2 Development Checklist
+## ✅ v0.3 Development Checklist
 
 ### Hardware
 - [x] Left and right controller halves (nRF52840)
@@ -48,9 +48,9 @@ Controller is still definetly in the early phases. However it does function and 
 - [x] Mouse + Gamepad + Keyboard HID reports
 - [x] Input parsing for trackpads and buttons
 - [x] Haptics
-- [ ] Rumble support
+- [X] Rumble support (Could still be improved)
 - [x] Gyro Support
-- [ ] Calibration routines + save to internal memory
+- [x] Calibration routines + save to internal memory
 - [ ] Configurable modes (gesture/tap/mouse/gamepad)
 - [x] Steam Input compatibility or XInput compatibility(This is now done through DS4)
 - [ ] Capacitive Joystick
@@ -73,7 +73,11 @@ Controller is still definetly in the early phases. However it does function and 
 
 ## 📷 Media
 
-Coming soon — demo images, build progress, and gameplay tests.
+[Valve Took Too Long… So I Built the Steam Controller 2](https://youtu.be/ycMgIToLav8?si=yKXbfcrKJxGGkxHx)
+
+[Valve Announced a New Steam Controller… and I Upgraded Mine](https://youtu.be/R8YwpwIV1gQ?si=VNfhFrsPYMe3HJeA)
+
+[LTT Video](https://youtu.be/eNb55ZwnCRc?si=DEBvHWtwEqF-e4JU)
 
 ---
 
@@ -104,7 +108,12 @@ Coming soon — demo images, build progress, and gameplay tests.
 
 Contributions are welcome! Feel free to fork the repo, open issues, or submit pull requests.
 
-If you're not sure where to start, check out the [Checklist](#-v01-development-checklist) for open tasks.
+If you're not sure where to start, check out the [Checklist](#-v03-development-checklist) for open tasks.
+
+Special Thanks to:
+- TheTitaniumTitan for Suggesting S-Input and providing working example code
+- RogueRen for helping make some PCB ordering documentation
+- Kuekenzange for making a charging dock 3d Model
 
 ---
 
